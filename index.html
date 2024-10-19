@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary Meta Tags -->
+    <title>Car Parking Lot</title>
+    <meta name="title" content="Car Parking Lot" />
+    <meta name="description" content="Car Parking" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://metatags.io/" />
+    <meta property="og:title" content="Car Parking Lot" />
+    <meta property="og:description" content="Car Parking" />
+    <meta property="og:image" content="/meta-img.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://metatags.io/" />
+    <meta property="twitter:title" content="Car Parking Lot" />
+    <meta property="twitter:description" content="Car Parking" />
+    <meta property="twitter:image" content="/meta-img.png" />
+    
+    <!-- Meta Tags Generated with https://metatags.io -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="shortcut icon" href="./assets/images/car-img Small.png" type="image/x-icon">
+</head>
+<style>
+
+</style>
+
+<body class="overflow-hidden">
+    <div class="parking-lot tab-card relative">
+        <div class="road">
+            <div id="moving-car-container"></div>
+        </div>
+        <div class="parking-area nav-tabs">
+            <div class="parking-space" onclick="moveCar('car-img')">
+                <img src="./assets/images/car-img Small.png" alt="" class="car-img">
+            </div>
+            <div class="parking-space" onclick="moveCar('second-car')">
+                <img src="./assets/images/second-car.png" alt="" class="second-car">
+            </div>
+            <div class="parking-space" onclick="moveCar('rolls-royce')">
+                <img src="./assets/images/toy-car.png" alt="rolls-royce" class="rolls-royce">
+            </div>
+            <div class="parking-space" onclick="moveCar('police-car')">
+                <img src="./assets/images/police-car.png" alt="police car" class="police-car">
+            </div>
+            <div class="parking-space" onclick="moveCar('land-rover-defender')">
+                <img src="./assets/images/land-rover-defender.png" alt="land rover" class="land-rover-defender">
+            </div>
+        </div>
+    </div>
+    <script>
+        function moveCar(carClass) {
+            const road = document.getElementById('moving-car-container');
+            road.innerHTML = '';
+
+            const car = document.querySelector(`.${carClass}`);
+            if (car) {
+                const clonedCar = car.cloneNode(true);
+                clonedCar.classList.add('moving');
+                clonedCar.style.position = 'absolute';
+                clonedCar.style.left = '100%';
+                road.appendChild(clonedCar);
+            }
+        }
+    </script>
+</body>
+
+</html>
